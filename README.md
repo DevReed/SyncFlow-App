@@ -1,38 +1,80 @@
-# SyncFlow App
+# 📦 SyncFlow – Inventory Management That Just Works
 
-> The official client for managing and syncing your inventory with SyncFlow™.
-
----
-
-## 📦 What Is This?
-
-`SyncFlow.exe` is a standalone Windows app built for real-world shop use.  
-It provides:
-
-- 🌓 A modern dark-themed inventory dashboard
-- 🔄 OneDrive syncing
-- 📊 Weekly usage tracking
-- 🛠️ Update notifications
+**SyncFlow** is a portable, dark-themed inventory management system designed for real-world use across multiple devices. Whether you're running it solo or syncing across an entire team, SyncFlow adapts.
 
 ---
 
-## 🚀 How to Use
+## 🚀 What’s Included
 
-1. Download `SyncFlow.exe` from the [Releases](../../releases) tab.
-2. Run it — no installation needed!
-3. Make sure your `MainInventoryList.xlsx` and `token_cache.json` are set up in your `OneDrive/Hi-Tech Inventory` folder.
-
----
-
-## 🧼 Notes
-
-- This is a **pre-release** version (v1.3.2d).
-- Windows SmartScreen may show a warning. Click **More Info > Run Anyway**.
-- Updates will be checked automatically via the SyncFlow update manifest.
+* 🖥️ **Dark-themed GUI** with dynamic overview panels
+* 🔍 **Searchable, tabbed Excel viewer** for each inventory category
+* 📊 **Live stock-level pie chart** with real-time status coloring
+* 🔐 **Secure OneDrive integration** using Microsoft Authentication
+* 📁 **Automatic file discovery** – no hardcoded paths
+* 🔁 **Smart lock/unlock logic** for safe file handling
+* 📦 **Weekly delta tracking** for usage and stockout awareness
 
 ---
 
-## 🔧 Feedback
+## 🔧 Setup Instructions
 
-Issues? Suggestions? Open an [Issue](../../issues) or reach out to the dev.  
-We’re building this with real technicians in mind. 💪
+1. **Ensure OneDrive is installed and signed in.**
+
+   * If using a shared folder, click "Add shortcut to My files" and wait for sync.
+
+2. **Place `MainInventoryList.xlsx` inside a folder named `Hi-Tech Inventory`**.
+
+   * This folder must be inside OneDrive (e.g. `C:/Users/You/OneDrive/Hi-Tech Inventory`)
+
+3. **Run SyncFlow**
+
+   * Download or build the `.exe` using PyInstaller
+   * First launch will auto-locate your Excel file
+
+---
+
+## 🛠 For Developers
+
+To build your own `.exe`:
+
+```bash
+pip install pyinstaller
+pyinstaller --onefile --noconsole --name SyncFlow_DarkGUI_v1.3.3g SyncFlow_AutoFileLocator.py
+```
+
+---
+
+## 💡 Features in v1.3.3g
+
+* ✅ Auto-detects inventory file in shared OneDrive folders
+* ✅ Corrects file locking and upload timing
+* ✅ Works across machines with no reconfiguration
+* ✅ Precompiled `.exe` requires no dependencies
+
+---
+
+## 📎 Files Used
+
+* `MainInventoryList.xlsx` – live data file
+* `logs/` – auto-generated change logs per week
+* `token_cache.json` – OneDrive login cache
+
+---
+
+## 🙌 Credits
+
+Built by [DevReed](https://github.com/DevReed), fueled by spreadsheets, frustration, and caffeine.
+
+---
+
+## 📬 Need Help?
+
+If the GUI doesn’t load or your file isn’t found:
+
+* Ensure OneDrive has synced the folder
+* Close Excel before syncing
+* Or manually select the file (feature coming soon!)
+
+---
+
+> **SyncFlow** – because inventory shouldn't require IT support every Monday.
